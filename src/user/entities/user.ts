@@ -17,7 +17,11 @@ import UserType from '../enums/userType';
     public firstName: string;
 
     @Column({name:"last_name"})
-    public Lastname: string;
+    public lastName: string;
+
+    @Column({name:"email",
+            unique:true})
+    public email: string;
 
     @Column({
       name:"user_type",
