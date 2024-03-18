@@ -1,4 +1,5 @@
 import { IsString, IsEmail, IsNotEmpty} from 'class-validator';
+import UserType from '../enums/userType';
 export class EditUserDto {
   @IsNotEmpty()
   @IsString()
@@ -11,5 +12,7 @@ export class EditUserDto {
   @IsNotEmpty()
   @IsEmail()
   email: string;
+
+  userType:UserType
 
 }

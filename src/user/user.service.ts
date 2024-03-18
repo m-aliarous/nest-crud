@@ -60,10 +60,11 @@ export class UserService {
     async updateUser(id: number, updateUserDto: EditUserDto) {
         const user = await this.getuserById(id);
         if(!user) throw new NotFoundException('Could not find the user');
-        const { firstName, lastName, email } = updateUserDto;
+        const { firstName, lastName, email,userType } = updateUserDto;
         user.firstName = firstName;
         user.lastName = lastName;
         user.email = email;
+        user.userType = userType;
         await this.userRepository.save(user);
         return user;
     }
