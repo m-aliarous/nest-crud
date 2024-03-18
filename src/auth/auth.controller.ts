@@ -28,10 +28,11 @@ export class AuthController {
     }
   }
 
-  @Roles('User')
+  @Roles('USER')
   @UseGuards(JwtAuthGuard, RoleGuard)
   @Get()
   profile(@Req() req, @Res() res) {
+    console.log('Request object:', req);
     return res.status(HttpStatus.OK).json(req.user);
   }
 }
