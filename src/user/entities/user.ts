@@ -35,6 +35,8 @@ import UserType from '../enums/userType';
     @Generated("uuid")
     uuid: string;
 
+    //TODO add password
+
     @CreateDateColumn({name:"created_at",})
     createdAt: Date;
   }
