@@ -9,7 +9,6 @@ export class AuthService {
 
   async authenticate(authenticateDto: AuthenticateDto){
     const user = await this.userService.getUserByEmail(authenticateDto.email);
-    console.log(user)
     if (!user) throw new NotFoundException('Invalid credentials');
 
     const token = sign({ ...user }, 'secrete');
