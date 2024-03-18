@@ -27,13 +27,13 @@ export class UserController {
       return newUser;
     }
 
-    @Put()
+    @Put(':id')
     async editUser(@Param('id') id: string, @Body() editUserDto: EditUserDto) {
       const updatedUser = await this.userService.updateUser(Number(id), editUserDto);
       return updatedUser;
     }
-    @Delete()
-    async deleteUser(@Param('id') id: string) {
+    @Delete(':id')
+    async deleteUser(@Param('id') id: string): Promise<User> {
       const deletedUser = await this.userService.deleteUser(Number(id));
       return deletedUser;
     }
