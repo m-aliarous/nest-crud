@@ -13,6 +13,6 @@ export class EditUserDto {
   @IsEmail()
   email: string;
 
-  userType:UserType
+  userType: UserType
 
 }
