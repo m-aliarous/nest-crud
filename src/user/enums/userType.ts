@@ -1,7 +1,7 @@
 enum UserType {
-    Admin = 'RED',
-    Moderator = 'GREEN',
-    User = 'BLUE',
+    Admin = 'ADMIN',
+    Moderator = 'MODERATOR',
+    User = 'USER',
   }
   
   export default UserType;
